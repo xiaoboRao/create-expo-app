@@ -70,7 +70,7 @@ export default function App() {
   return (
     <GestureHandlerRootView style={styles.container}>
       <View style={styles.container}>
-        <View ref={imageRef} collapsable={false}>
+        <View style={styles.imageContainer} ref={imageRef} collapsable={false}>
           <ImageViewer PlaceholderImage={PlaceholderImage} selectedImage={selectedImage}/>
           {pickedEmoji !== null ? <EmojiSticker imageSize={40} stickerSource={pickedEmoji}/> : null}
         </View>
@@ -91,7 +91,7 @@ export default function App() {
         <EmojiPicker onClose={onModalClose} isVisible={isModalVisible}>
           <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose}></EmojiList>
         </EmojiPicker>
-        <StatusBar style="auto"/>
+        <StatusBar style="light"/>
       </View>
     </GestureHandlerRootView>
   )
